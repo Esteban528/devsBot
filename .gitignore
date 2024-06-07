@@ -1,0 +1,11 @@
+# Archivo de configuración de macOS
+.DS_Store
+
+# Dependencias (por ejemplo, node_modules)
+node_modules
+
+# Archivos de entorno (por ejemplo, .env, .env.local, etc.)
+.env
+.env.*
+
+# Otras exclusiones específicas pueden agregarse aquí
