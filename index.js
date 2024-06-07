@@ -14,7 +14,7 @@ const Client = new Discord.Client({
 Client.commands = new Discord.Collection();
 
 fs.readdirSync("./slash_commands").forEach((commandfile) => {
-  const command = require(`./slash_commands/${commandfile}`); 
+  const command = require(`./slash_commands/${commandfile}`);
   Client.commands.set(command.data.name, command);
 });
 
@@ -30,7 +30,7 @@ const REST = new Discord.REST().setToken(config.CLIENT_TOKEN);
         body: Client.commands.map((cmd) => cmd.data.toJSON()),
       }
     );
-    console.log(`🗻 Loaded ${Client.commands.size} slashcommands {/}`);
+    console.log(`[!] Loaded ${Client.commands.size} slashcommands {/}`);
   } catch (error) {
     console.log("Error loading commands.", error);
   }
@@ -44,8 +44,7 @@ Client.on("interactionCreate", async (interaction) => {
     // Obtiene los datos del comando
     const command = Client.commands.get(interaction.commandName);
     // Ejecuta el comando
-  command.execute(interaction).catch(console.error);
-  } else {
+    command.execute(interaction).catch(console.error);
   }
 });
 
@@ -59,9 +58,9 @@ try {
   const files = fs.readdirSync("./events").filter((filename) => filename.endsWith(".js"));
 
   files.forEach((filename) => {
-      const listener = require(`./events/${filename}`);
-      const eventName = path.basename(filename, ".js");
-      Client.on(eventName, listener.bind(null, Client));
+    const listener = require(`./events/${filename}`);
+    const eventName = path.basename(filename, ".js");
+    Client.on(eventName, listener.bind(null, Client));
   });
 } catch (err) {
   console.log("[err] Ha ocurrido un error al cargar un evento", err);
