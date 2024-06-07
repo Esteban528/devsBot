@@ -5,7 +5,7 @@
 git clone git@github.com:Esteban528/devsBot.git
 
 cd devsBot
-npm -i
+npm i
 ```
 
 ## Ejecución 
