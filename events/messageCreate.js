@@ -11,5 +11,6 @@ module.exports =  async (client, message) => {
   if(message.content === "tu mama") message.reply( "Es una camioneta" )
   if(message.content === "tu tio") message.reply( "te viola" )
   if(message.content === "melo") message.reply( "me lo agarras" ) 
+  if(message.content === "verde") message.reply( "agachate y me lo muerdes" ) 
 
 };
