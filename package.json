@@ -1,0 +1,23 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/voice": "^0.17.0",
+    "canvafy": "^7.1.0",
+    "canvas": "^2.11.2",
+    "discord-arts": "^0.6.1",
+    "discord.js": "^14.15.3",
+    "libsodium-wrappers": "^0.7.13",
+    "spotify-web-api-node": "^5.0.2",
+    "sqlite3": "^5.1.7",
+    "ytdl-core": "^4.11.5"
+  }
+}
