@@ -21,3 +21,8 @@ git push origin main
 
 ```
 
+## Invitacion del bot
+```bash
+https://discord.com/oauth2/authorize?client_id=1243695658439938058&permissions=8&scope=bot
+
+```
