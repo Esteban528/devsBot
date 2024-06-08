@@ -22,7 +22,4 @@ git push origin main
 ```
 
 ## Invitacion del bot
-```bash
-https://discord.com/oauth2/authorize?client_id=1243695658439938058&permissions=8&scope=bot
-
-```
+<a href="https://discord.com/oauth2/authorize?client_id=1243695658439938058&permissions=8&scope=bot">Enlace de invitación del bot :)</a>
