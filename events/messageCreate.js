@@ -3,7 +3,7 @@ const triggerResponses = [
   { trigger: "pene", response: "Por qué dices *pene* acaso no puedes pensar en otra cosa?", filter: true },
   { trigger: "tu mama", response: "es una camioneta", filter: false },
   { trigger: "tio", response: "Tu tio te viola!", filter: false },
-  { trigger: "hola", response: "Hola? En que podemos ayudarte", filter: false },
+  { trigger: "hola", response: "Hola, que tal!!", filter: false },
 ]
 
 // Mensajes Random

@@ -8,6 +8,6 @@ module.exports = async (client, member) => {
  
   if (goodbyeChannel)
     await goodbyeChannel.send(
-     ` 💤 **${member.user.username}** ha abandonado el servidor! `
+     ` 💤 **${member.user.username}** ha abandonado el servidor**!!** `
     );
 };

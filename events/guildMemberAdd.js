@@ -16,7 +16,7 @@ module.exports = async (client, member) => {
     .setTitle(`${member.user.displayName} bienvenido/a a la comunidad! 🐊`)
     .setColor('#0099ff')
     .setDescription(`
-    Nos alegramos que estés aqui, date una vuelta por <#1241434406678171750> y <#1241585144800874598>
+    Nos alegramos que estés aqui, date una vuelta por <#1241434406678171750> y <#1241585144800874598>!!
   `)
   .setImage("attachment://generated-image.png");
 

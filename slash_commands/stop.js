@@ -1,35 +1,38 @@
-// Pausa la musica y se va
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { getVoiceConnection } = require('@discordjs/voice');
-const { leaveVoiceChannel } = require('@discordjs/voice');
-const { AttachmentBuilder } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('stop')
-    .setDescription('Detiene la reproducción de música y sale del canal de voz'),
+    .setDescription('Pausa la música sin desconectar el bot.▶️'),
 
-  async execute(interaction) {
+  async execute(interaction, client) {
     await interaction.deferReply();
 
     try {
       const voiceChannel = interaction.member.voice.channel;
       if (!voiceChannel) {
-        return interaction.editReply('¡Debes estar en un canal de voz para usar este comando!');
+        const embed = new EmbedBuilder().setColor('#FF0000').setDescription('¡Debes estar en un canal de voz para usar este comando!🧨');
+        return interaction.editReply({ embeds: [embed] });
       }
 
-      const connection = getVoiceConnection(voiceChannel.guild.id);
-      if (connection) {
-        connection.destroy();
+      const serverQueue = client.queue.get(interaction.guild.id);
+      if (!serverQueue || !serverQueue.audioPlayer) {
+        const embed = new EmbedBuilder().setColor('#FF0000').setDescription('No hay ninguna canción reproduciéndose.🧨');
+        return interaction.editReply({ embeds: [embed] });
       }
 
-      await interaction.editReply({
-        content: '!Musica Terminada¡ Devs.bot salió del canal de voz :paz:',
-        files: [new AttachmentBuilder('./assets/images/background2.webp', { name: 'background.png' })],
-      });
+      serverQueue.audioPlayer.pause();
+
+      const embed = new EmbedBuilder()
+        .setColor('#0099ff')
+        .setDescription('La música ha sido pausada.');
+      await interaction.editReply({ embeds: [embed] });
+
     } catch (error) {
       console.error('Ocurrió un error:', error);
-      await interaction.editReply('Ocurrió un error al ejecutar el comando.');
+      const embed = new EmbedBuilder().setColor('#FF0000').setDescription('Ocurrió un error al ejecutar el comando.🧨');
+      await interaction.editReply({ embeds: [embed] });
     }
   },
 };

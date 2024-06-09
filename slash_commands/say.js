@@ -1,4 +1,3 @@
-// El Bot habla por ti
 const Discord = require("discord.js");
 
 // Mensaje repitiendo
@@ -6,12 +5,12 @@ module.exports = {
     // datos del comando
     data : new Discord. SlashCommandBuilder()
       .setName("say")
-      .setDescription("El bot dirá lo que tu desees.")
+      .setDescription("El bot dirá lo que tu desees.👥")
       .addStringOption ((option) =>
         option
           .setName("mensaje")
-          .setDescription("Mensaje que repetira el bot.")
-          .setMinLength(5)
+          .setDescription("Mensaje que repetira el bot.👥")
+          .setMinLength(3)
           .setMaxLength(100)
           .setRequired(true)
     ),
