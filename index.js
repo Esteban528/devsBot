@@ -58,10 +58,12 @@ Client.login(config.CLIENT_TOKEN);
 try {
   const files = fs.readdirSync("./events").filter((filename) => filename.endsWith(".js"));
 
+  console.log("Events Loaded");
   files.forEach((filename) => {
     const listener = require(`./events/${filename}`);
     const eventName = path.basename(filename, ".js");
     Client.on(eventName, listener.bind(null, Client));
+    console.log(`Event: ${filename}`);
   });
 } catch (err) {
   console.log("[err] Ha ocurrido un error al cargar un evento", err);
