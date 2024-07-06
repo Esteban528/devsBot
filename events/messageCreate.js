@@ -1,4 +1,4 @@
-const { executeCommand } = require("../commands/commandHandler.js");
+const CommandHandler = require('../commands/commandHandler.js');
 
 const prefix = ".";
 const triggerResponses = [
@@ -17,7 +17,8 @@ module.exports = async (client, message) => {
   
   if (messageText[0] == prefix) {
     const command = messageText.split(" ");
-    executeCommand(command);
+    CommandHandler.execute(command[0].split(".")[1], message);
+    return;
   }
 
   triggerResponses.forEach(({ trigger, response, filter }) => {
