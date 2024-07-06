@@ -13,10 +13,16 @@ module.exports = async (client, member) => {
   })
 
   const embed = new EmbedBuilder()
-    .setTitle(`${member.user.displayName} bienvenido/a a la comunidad! 🐊`)
+    .setTitle(`${member.user.displayName} te damos la bienvenida a la comunidad! 🐊`)
     .setColor('#0099ff')
     .setDescription(`
-    Nos alegramos que estés aqui, date una vuelta por <#1241434406678171750> y <#1241585144800874598>!!
+    Me alegro que estés aqui, espero que te sirva de algo.
+    Sino quieres ser castigado lee <#1241434406678171750>
+    Para personalizar tu perfil y adquirir roles ve a <#1241585144800874598>
+
+    Si quieres aprender a programar o adentrarte en este mundo puedes ir a <#1244004658658410547>
+
+    Aprovecha los canales y recursos gratuitos es muy posible que te sirvan en un futuro.
   `)
   .setImage("attachment://generated-image.png");
 
