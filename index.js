@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const config = require("./config.json");
 const path = require("path");
+require('dotenv').config();
 
 // Cliente de discord
 const Client = new Discord.Client({
@@ -20,12 +20,12 @@ fs.readdirSync("./slash_commands").forEach((commandfile) => {
 });
 
 // Registrar comandos
-const REST = new Discord.REST({ version: '9' }).setToken(config.CLIENT_TOKEN);
+const REST = new Discord.REST({ version: '9' }).setToken(process.env.DISCORD_KEY_TOKEN);
 
 (async () => {
   try {
     await REST.put(
-      Discord.Routes.applicationGuildCommands(config.clientId, config.guildId),
+      Discord.Routes.applicationGuildCommands(process.env.DISCORD_CLIENT_ID, process.env.DISCORD_GUILD_ID),
       {
         body: Client.commands.map((cmd) => cmd.data.toJSON()),
       }
@@ -52,7 +52,7 @@ Client.on("interactionCreate", async (interaction) => {
 });
 
 // Conexion con el Token
-Client.login(config.CLIENT_TOKEN);
+Client.login(process.env.DISCORD_KEY_TOKEN);
 
 // Handler de Eventos 
 try {

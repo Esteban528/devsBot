@@ -12,10 +12,12 @@
   "dependencies": {
     "@discordjs/voice": "^0.17.0",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@google/generative-ai": "^0.14.1",
     "canvafy": "^7.1.0",
     "canvas": "^2.11.2",
     "discord-arts": "^0.6.1",
     "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
     "libsodium-wrappers": "^0.7.13",
     "play-dl": "^1.9.7",
     "quickchart-js": "^3.1.3",
