@@ -9,6 +9,11 @@ npm i
 ```
 
 ## Ejecución 
+**Modo dev**
+```bash 
+npx gulp dev
+```
+**Modo produccion**
 ```bash 
 node .
 ```
