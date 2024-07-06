@@ -1,6 +1,14 @@
+const runGemini = require("../utils/ia/Gemini.js");
+
 const commands = {
-  ia: (prompt) => {
-    return prompt;
+  ia: (prompt, message) => {
+    runGemini(prompt)
+      .then(result => {
+        message.reply(result);
+      })
+      .catch(error => {
+        message.reply("Ocurrió un error");
+      })
   }
 }
 
@@ -8,9 +16,7 @@ const CommandHandler = {
   execute: (command, message) => {
 
     try {
-      const response = commands[command](message.content.replace(`.${command}`, "").trim());
-
-      message.reply(response);
+      commands[command](message.content.replace(`.${command}`, "").trim(), message);
     } catch (error) {
       console.log(error)
     }
