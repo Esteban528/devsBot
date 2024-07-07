@@ -4,7 +4,10 @@ const commands = {
   ia: (prompt, message) => {
     runGemini(prompt)
       .then(result => {
-        message.reply(result);
+        const responses = splitString(inputString)
+        responses.forEach(response => {
+          message.reply(response);
+        })
       })
       .catch(error => {
         message.reply("Ocurrió un error");
@@ -23,5 +26,25 @@ const CommandHandler = {
 
   }
 }
+
+function splitString(inputString) {
+  const maxLength = 2000;
+
+  if (inputString.length > maxLength) {
+    const part1 = inputString.slice(0, maxLength);
+    const part2 = inputString.slice(maxLength);
+    return [part1, part2];
+  } else {
+    return [inputString];
+  }
+}
+
+// Ejemplo de uso
+const longString = "Aquí va un string muy largo...";
+const result = splitString(longString);
+
+// Output para verificar
+console.log(result);
+
 
 module.exports = CommandHandler;
