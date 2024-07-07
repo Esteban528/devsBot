@@ -1,11 +1,11 @@
+version: "3.9"
+
 services:
   app:
     image: node:20
     volumes:
       - .:/usr/src/app
     working_dir: /usr/src/app
-    command: [ "npx", "gulp", "run" ]
-    environment:
-      NODE_ENV: production
+    command: npx gulp run
     ports:
       - "3000:3000"
