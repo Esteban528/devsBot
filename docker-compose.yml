@@ -1,0 +1,11 @@
+services:
+  app:
+    image: node:20
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: [ "npx", "gulp", "run" ]
+    environment:
+      NODE_ENV: production
+    ports:
+      - "3000:3000"

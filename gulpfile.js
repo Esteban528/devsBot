@@ -40,4 +40,5 @@ function dev(done) { //Nos actualiza el proyecto
 }
 
 exports.dev = (dev);
+exports.run = (runApp);
 
