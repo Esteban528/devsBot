@@ -4,7 +4,7 @@ const commands = {
   ia: (prompt, message) => {
     runGemini(prompt)
       .then(result => {
-        const responses = splitString(inputString)
+        const responses = splitString(result)
         responses.forEach(response => {
           message.reply(response);
         })
