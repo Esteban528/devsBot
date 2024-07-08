@@ -11,7 +11,7 @@ const Client = new Discord.Client({
 // Inicializar la fila de reproducción
 Client.queue = new Map();
 
-// Cargar comandos
+// Cargar comandos del bot
 Client.commands = new Discord.Collection();
 
 fs.readdirSync("./slash_commands").forEach((commandfile) => {
