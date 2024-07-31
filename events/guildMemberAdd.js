@@ -8,7 +8,6 @@ module.exports = async (client, member) => {
   const welcomeChannelId = "1244496193254461460";
   const generalChannel = "1241047932279586961";
   const channel = await client.channels.fetch(welcomeChannelId);
-  const general = await client.channels.fetch(generalChannel);
   const welcomeMessage = await runGemini(`
     Alguien nuevo se ha unido, es el usuario <@${member.user.id}> aqui te dejo algunas indicaciones:
     DEBES MENCIONARLO SI O SI
@@ -32,14 +31,11 @@ module.exports = async (client, member) => {
     .setDescription(`
     Lee las <#1241434406678171750> e invita a tus amigos!
   `)
-  .setImage("attachment://generated-image.png");
+    .setImage("attachment://generated-image.png");
 
   channel.send({
-    content: `<@${member.user.id}>`,
+    content: `<@${member.user.id}> ${welcomeMessage}`,
     embeds: [embed],
     files: [attachment]
   });
-  general.send({
-    content: welcomeMessage
-  })
 };

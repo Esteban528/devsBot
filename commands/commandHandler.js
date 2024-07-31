@@ -21,7 +21,7 @@ const CommandHandler = {
     try {
       commands[command](message.content.replace(`.${command}`, "").trim(), message);
     } catch (error) {
-      console.log(error)
+      //console.log(error)
     }
 
   }
