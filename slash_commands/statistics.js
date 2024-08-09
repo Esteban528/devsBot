@@ -6,7 +6,7 @@ const QuickChart = require('quickchart-js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('statistics')
-        .setDescription('Muestra las estadisticas de miembros en el servidor.📊'),
+        .setDescription('📊 Muestra las estadisticas de miembros en el servidor.'),
     async execute(interaction) {
         const guild = interaction.guild;
         const totalMembers = guild.memberCount;

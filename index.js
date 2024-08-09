@@ -30,7 +30,7 @@ const REST = new Discord.REST({ version: '9' }).setToken(process.env.DISCORD_KEY
         body: Client.commands.map((cmd) => cmd.data.toJSON()),
       }
     );
-    console.log(`[!] Loaded ${Client.commands.size} slashcommands {/}`);
+    console.log(`Commands: Loaded ${Client.commands.size} Slashcommands {/}`);
   } catch (error) {
     console.log("Error loading commands.", error);
   }
@@ -68,3 +68,8 @@ try {
 } catch (err) {
   console.log("[err] Ha ocurrido un error al cargar un evento", err);
 }
+
+// Actividad del Bot
+Client.on("ready", () => {
+  Client.user.setActivity('| Moderando en >Run Devs', { type: Discord.ActivityType.Watching });
+});

@@ -1,15 +1,14 @@
-// Informacion de un usuario
 const { CommandInteraction, Client, AttachmentBuilder, EmbedBuilder, ButtonBuilder, ActionRowBuilder } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { profileImage } = require('discord-arts');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('profile')
-        .setDescription('Este comando permite ver el perfil de un usuario mediante una imagen.👤')
+        .setName('avatar')
+        .setDescription('👤 Este comando permite ver el perfil de un usuario mediante una imagen.')
         .addUserOption(option => option
             .setName('usuario')
-            .setDescription('Elige al usuario que quieras ver el perfil.👤')
+            .setDescription('👤 Elige al usuario que quieras ver el perfil.')
             .setRequired(false)
         ),
 
@@ -27,7 +26,7 @@ module.exports = {
             const member = interaction.guild ? interaction.guild.members.cache.get(user.id) : null;
 
             if (!member) {
-                return interaction.editReply('No se pudo obtener el miembro del servidor.🧨');
+                return interaction.editReply('🧨 No se pudo obtener el miembro del servidor.');
             }
 
             const currentDate = new Date();
@@ -89,7 +88,7 @@ module.exports = {
             });
         } catch (error) {
             console.error('Ocurrió un error:', error);
-            await interaction.editReply('Ocurrió un error al ejecutar el comando.🧨');
+            await interaction.editReply('🧨 Ocurrió un error al ejecutar el comando.');
         }
     },
 };

@@ -1,14 +1,13 @@
-// Hace un mensaje como si fuera Twitter
 const { ChatInputCommandInteraction, SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const canvafy = require('canvafy');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('tweet')
-        .setDescription('Este comando permite hacer un tweet.💬')
+        .setDescription('💬 Este comando permite hacer un tweet.')
         .addStringOption(option => option
             .setName('texto')
-            .setDescription('Escribe el texto que quieras que salga en el tweet.💬')
+            .setDescription('💬 Escribe el texto que quieras que salga en el tweet.')
             .setMaxLength(1000)
             .setMinLength(1)
             .setRequired(true)),

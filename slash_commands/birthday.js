@@ -3,10 +3,10 @@ const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
     .setName("birthday")
-    .setDescription("Celebra tu cumpleaños🎉")
+    .setDescription("🎉 Celebra tu cumpleaños.")
     .addUserOption(option => 
         option.setName('user')
-            .setDescription('Menciona a alguien para desearle feliz cumpleaños🎉')
+            .setDescription('🎉 Menciona a alguien para desearle feliz cumpleaños.')
             .setRequired(true)), // Agregar la opción de mencionar a alguien para su cumpleaños
 
     async execute(interaction, client) {
