@@ -1,4 +1,4 @@
 // Mensaje de activacion en la terminal
 module.exports = async (client) => {
-    console.log( `[!] ${client.user.username} running. :)` );
+    console.log( `Bot: ${client.user.username} running :D` );
 };
