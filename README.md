@@ -37,9 +37,6 @@ git push origin main
 
 ```
 
-## Invitacion del bot
-<a href="https://discord.com/oauth2/authorize?client_id=1243695658439938058&permissions=8&scope=bot">Enlace de invitación del bot :D</a>
-
 ## Token y ID del Bot
 ```bash
 Token: MTI0MzY5NTY1ODQzOTkzODA1OA.GVYA6U.DOzz3VCwysWJ7Zl71_VAO3FbyrEX0syA0XvCDI
@@ -49,3 +46,7 @@ Token: MTI0MzY5NTY1ODQzOTkzODA1OA.GVYA6U.DOzz3VCwysWJ7Zl71_VAO3FbyrEX0syA0XvCDI
 ID: 1243695658439938058
 
 ```
+
+## Invitacion del bot
+<a href="https://discord.com/oauth2/authorize?client_id=1243695658439938058&permissions=8&scope=bot">Enlace de invitación del bot :D</a>
+
