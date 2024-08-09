@@ -1,4 +1,4 @@
-const CommandHandler = require('../commands/commandHandler.js');
+const CommandHandler = require('../slash_commands/ia.js');
 
 const prefix = ".";
 const triggerResponses = [
