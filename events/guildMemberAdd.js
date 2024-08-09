@@ -1,4 +1,3 @@
-// Sistema de bienvenida
 const { EmbedBuilder, AttachmentBuilder } = require("discord.js");
 const generateImage = require("../utils/canvas/welcomeImage");
 const runGemini = require("../utils/ia/Gemini");
@@ -28,9 +27,6 @@ module.exports = async (client, member) => {
   const embed = new EmbedBuilder()
     .setTitle(`${member.user.displayName} te damos la bienvenida a la comunidad! 🐊`)
     .setColor('#0099ff')
-    .setDescription(`
-    Lee las <#1241434406678171750> e invita a tus amigos!
-  `)
     .setImage("attachment://generated-image.png");
 
   channel.send({
