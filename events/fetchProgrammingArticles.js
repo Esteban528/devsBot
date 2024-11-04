@@ -11,7 +11,7 @@ async function fetchProgrammingArticles() {
     if (data && data.length > 0) {
       const serverEmoji = '<:hyperpinged:1243296463228899528>'; 
       // Mensaje inicial, incluyendo la mención a todos
-      let articlesMessage = `# ${serverEmoji} @everyone ¡Noticias del día!:\n`;
+      let articlesMessage = `# ${serverEmoji} ||@everyone|| ¡Noticias del día!:\n`;
 
       const numberOfArticlesToShow = 5; 
       const randomArticles = []; 
