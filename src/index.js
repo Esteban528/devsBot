@@ -3,7 +3,11 @@ const fs = require("fs");
 const path = require("path");
 require('dotenv').config();
 
-// Cliente de discord
+const getDir = (file) => {
+  return path.join(__dirname, file); // Usa __dirname para asegurarte de que la ruta sea absoluta
+};
+
+// Cliente de Discord
 const Client = new Discord.Client({
   intents: 3276799,
 });
@@ -14,8 +18,8 @@ Client.queue = new Map();
 // Cargar comandos del bot
 Client.commands = new Discord.Collection();
 
-fs.readdirSync("./slash_commands").forEach((commandfile) => {
-  const command = require(`./slash_commands/${commandfile}`);
+fs.readdirSync(getDir("slash_commands")).forEach((commandfile) => {
+  const command = require(getDir(path.join("slash_commands", commandfile)));
   Client.commands.set(command.data.name, command);
 });
 
@@ -51,22 +55,22 @@ Client.on("interactionCreate", async (interaction) => {
   }
 });
 
-// Conexion con el Token
+// Conexión con el Token
 Client.login(process.env.DISCORD_KEY_TOKEN);
 
 // Handler de Eventos 
 try {
-  const files = fs.readdirSync("./events").filter((filename) => filename.endsWith(".js"));
+  const files = fs.readdirSync(getDir("events")).filter((filename) => filename.endsWith(".js"));
 
   console.log("Events Loaded");
   files.forEach((filename) => {
-    const listener = require(`./events/${filename}`);
+    const listener = require(getDir(path.join("events", filename)));
     const eventName = path.basename(filename, ".js");
     Client.on(eventName, listener.bind(null, Client));
     console.log(`Event: ${filename}`);
   });
 } catch (err) {
-  console.log("[err] Ha ocurrido un error al cargar un evento", err);
+  console.error("[err] Ha ocurrido un error al cargar un evento", err);
 }
 
 // Actividad del Bot
