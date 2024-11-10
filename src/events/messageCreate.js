@@ -2,12 +2,9 @@ const CommandHandler = require('../commands/commandHandler.js');
 
 const prefix = ".";
 const triggerResponses = [
-  // { trigger: "pene", response: "Por qué dices *pene* acaso no puedes pensar en otra cosa?", filter: true },
-  // { trigger: "tu mama", response: "es una camioneta", filter: false },
-  // { trigger: "hola", response: "Hola, que tal!!", filter: false },
+  { trigger: "necesito ayuda", response: "¿Necesitas ayuda? Puedes preguntar en <#1242296914452545597>", filter: false },
 ]
 
-// Mensajes Random
 module.exports = async (client, message) => {
 
   if (message.author.bot) return; // si el autor del message es el bot, no vuleva a reponder

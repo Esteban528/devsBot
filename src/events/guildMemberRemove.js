@@ -1,4 +1,3 @@
-// Sistema de despedida
 const goodbyeChannelId = "1244496193254461460";
 
 module.exports = async (client, member) => {
