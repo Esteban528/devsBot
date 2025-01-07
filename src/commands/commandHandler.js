@@ -15,7 +15,7 @@ const commands = {
   },
 };
 
-class CommandHandler {
+const CommandHandler = {
   execute(command, message) {
     try {
       const commandFunction = commands[command];
